@@ -1,0 +1,13 @@
+[Unit]
+Description=dormir
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/dormir
+ExecStart=/bin/sh -c /opt/dormir/dormir.sh
+SyslogIdentifier=dormir
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
